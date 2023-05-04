@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+:root{
+    --background: #212A3E;
+    --background-fill: #F1F6F9;
+    --background-card: #394867;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--background);
+    color: var(--background-fill);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1.2rem 0 0 0;
+}
+
+h2{
+    color: var(--background);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.article-container{
+    background: var(--background-fill);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem;
+
+    width: fit-content;
+    height: fit-content;
+
+    transition: 500ms ease-in;
+}
+
+.hover:hover{
+    transform: scale(1.05);
+}
+
+.before{
+    animation: translate-left 3s ease-in-out 1s;
+}
+
+@keyframes translate-left {
+    0%{
+        transform: translate(-1000px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+
+
+
+.after{
+    animation: translate-right 3s ease-in-out 1s;
+}
+
+
+@keyframes translate-right {
+    0%{
+        transform: translate(1000px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+
+.article-card{
+    background-color: var(--background-card);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.after-container{
+    flex-direction: row-reverse;
+}
+
+.article__figure{
+    height: 400px;
+}
+
+.article__img{
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+}
+
+.article__paragraph{
+    text-align: center;
+    padding: 1rem;
+
+
+    animation:  duration timing-function delay iteration-count direction fill-mode;
+}
+
+.show-btn{
+    background-color: var(--background-card);
+    border: none;
+    border-radius: 1rem;
+    color: var(--background-fill);
+    cursor: pointer;
+
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+
+.loader {
+    background-color: var(--background);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+
+    animation: loader 2s linear forwards;
+}
+
+@keyframes loader {
+    0%, 95%{
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader div{
+    background-color: var(--background-fill);
+    border-radius: 100%;
+
+    margin: 0 1rem;
+    width: 50px;
+    height: 50px;
+
+    animation: scale 2s ease-in infinite;
+}
+
+.loader div:first-child{
+    animation-delay: .2s;
+}
+
+.loader div:nth-child(2){
+    animation-delay: .4s;
+}
+.loader div:last-child{
+    animation-delay: .6s;
+}
+
+@keyframes scale {
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.2);
+    }
+}
+
+
+.hidden{
+    display: none;
+
+    visibility: hidden;
+    opacity: 0;
+
+
+    transition: 500ms all ease-in;
+}
+
+
+
